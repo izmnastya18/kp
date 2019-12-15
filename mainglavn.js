@@ -54,41 +54,25 @@ function start(){ // Ждём когда нажмут кнопку старт и
 		play = true;
 		startButton.style.display='none';
 		console.log("Нажатие произошло");
-	};
+		count = count+1;
+		// generateTask(dataTasks);
+
+}
 	
 startButton.onclick = start;
-generateTask(dataTasks);
-if(play){
+console.log(count);
+if(count==1){
 	// добавляются  кнопки
+	generateTask(dataTasks);
 
 
 
-
-
-
-
-
-
-
-
-    // for(let i = 0; i < dataTasks.length; i++){
-	// 	for(let j = 0; j < count; j++)
-	// 	{
-	// 		buttonsAnswer.style.display='block';
-	// 	}
-	// }
-	
-	// for(let i = 0; i < dataTasks.length; i++)
-	// {
-	// 	buttonsAnswer.innerHTML = dataTasks[i].answer[i];
-	// 	console.log("fdnjfn");
-	// }
-		// let intervalID = setInterval(sec, 1000);
+	// currentAnswer = dataTasks[count]
+	// generateTask(currentAnswer); 
 
 	// document.getElementById('question').innerHTML=document.getElementById('question').innerHTML = dataTasks.aswer  + (currentAnswer+1) + '/' + countAnswer;
 	// currentAnswer = dataTasks[count]
 	// generateTask(currentAnswer); 
-	// alert("gfhfdj");
     // передаём первый вопрос 
 	// далее после того как юзер ответил - опять определяю клик на кнопке другой только, 
 	// снова вызываю generateTask после count++ 
@@ -96,20 +80,22 @@ if(play){
     // как определить правильный ответ: 
 	// после ответа юзера определяю клик и на том что он кликнул,узнаю чему равен
 	// textContent - и сравниваю с currentAnswer.trueAnswer
-}
-
+};
 
 
 ///////////// Вспомогательные ф-и
-
+// let intervalID = setInterval(sec, 1000);
 // Ф-я принимает элемент массива task и отрисовывает на странице вопросы и ответы
 function generateTask(dataTask){  
 	for(let i=0;i < dataTask[0].answer.length;i++)
 	{
 		buttonsAnswer = document.createElement('button');
+		let brAnsw = document.createElement('br');
+		document.body.appendChild(brAnsw);
 		document.body.appendChild(buttonsAnswer);
 		pQuestion.innerHTML = dataTask[0].question;
-		buttonsAnswer.innerHTML += dataTasks[0].answer[i]+ '<br>' ;
+		buttonsAnswer.innerHTML += dataTasks[0].answer[i] ;
+		console.log(dataTasks[i].answer.length);
 	}
 	return generateTask;
 }	
