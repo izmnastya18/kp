@@ -55,7 +55,7 @@ function start(){ // Ждём когда нажмут кнопку старт и
 		startButton.style.display='none';
 		console.log("Нажатие произошло");
 		count = count+1;
-		// generateTask(dataTasks);
+		generateTask(dataTasks);
 
 }
 	
@@ -64,7 +64,7 @@ console.log(count);
 if(count==1){
 	// добавляются  кнопки
 	generateTask(dataTasks);
-
+	
 
 
 	// currentAnswer = dataTasks[count]
@@ -90,9 +90,11 @@ function generateTask(dataTask){
 	for(let i=0;i < dataTask[0].answer.length;i++)
 	{
 		buttonsAnswer = document.createElement('button');
-		let brAnsw = document.createElement('br');
-		document.body.appendChild(brAnsw);
+		// let brAnsw = document.createElement('br');
+		// document.body.appendChild(brAnsw);
 		document.body.appendChild(buttonsAnswer);
+		div=document.querySelector('div');
+		div.insertAdjacentElement("afterbegin", buttonsAnswer);
 		pQuestion.innerHTML = dataTask[0].question;
 		buttonsAnswer.innerHTML += dataTasks[0].answer[i] ;
 		console.log(dataTasks[i].answer.length);
