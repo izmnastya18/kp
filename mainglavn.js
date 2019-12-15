@@ -114,7 +114,7 @@ function generateTask(dataTask){
 	}
 	for(let i = 0; i < dataTask[i].answer.length; i++)
 	{
-		buttonsAnswer[i].innerHTML = dataTasks[0].answer;
+		buttonsAnswer[i].innerHTML += dataTasks[0].answer;
 	}
 	return generateTask;
 }	
