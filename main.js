@@ -120,7 +120,7 @@ function generateNewTask(currentQuestions) {
 }
 //конец тренажера 1 уровня
 function endTest() {
-	play = false;   // Вот же спецом завёл переменную
+	play = false; 
 	document.querySelector('div').remove();
 	document.getElementById('word').style.display='none';
 	let resultStr = `Правильных ответов: ${countTrueAnswers}  из  ${dataTasks1lvl.length} `;
